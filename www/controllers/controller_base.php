@@ -24,8 +24,9 @@ class BaseController{
         $controller_name = strtolower(substr($class_name, 0, strpos($class_name, 'Controller')));
         $view_path = "./views/{$controller_name}/{$this->action}.php";
 
-        if(is_readable($view_path)){
-            include $view_path;
+        if(is_readable($view_path))
+        {
+            include "./views/_shared/_layout.php";
         }
         else
         {

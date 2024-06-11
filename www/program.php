@@ -7,10 +7,7 @@ if($quest_position !== false){
   $uri = substr($uri, 0, $quest_position);
 }
 
-// echo $uri;
 $part = explode('/', $uri);
-// echo "<pre>";
-// print_r($part);
 
 $controller = empty($part[1]) ? 'home' : $part[1];
 $action = empty($part[2]) ? 'index' : $part[2];
