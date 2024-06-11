@@ -1,6 +1,41 @@
 <?php
 
 $uri = $_SERVER['REQUEST_URI'];
+$path = "./wwwroot{$uri}";
+
+if(is_file($path))
+{
+    $ext = pathinfo($uri, PATHINFO_EXTENSION);
+
+    switch ($ext) 
+    {
+        case 'jpg' : $ext = 'jpeg';
+        case 'jpeg':
+        case 'bmp' :
+        case 'png' :
+            $content_type = "image/$ext";
+            break ;
+        case 'js'  : $ext = 'javascript';
+        case 'txt' :
+        case 'html':
+        case 'css' :
+            $content_type = "text/$ext" ;
+            break ;
+    }
+
+    if(empty($content_type))
+    {
+        http_response_code(403);
+        echo "File forbidden";
+        exit;
+    }
+
+    header("Content-Type: $content_type");
+
+    readfile($path);
+    exit;
+}
+
 $quest_position = strpos($uri, '?');
 
 if($quest_position !== false){

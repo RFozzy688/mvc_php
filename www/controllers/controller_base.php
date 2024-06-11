@@ -5,6 +5,9 @@ class BaseController{
     public function serve($action)
     {
         $this->action = $action;
+        $this->view_data = [
+            'title' => 'PHP-221',
+        ];
 
         $method = 'do_' . strtolower($_SERVER['REQUEST_METHOD']);
 

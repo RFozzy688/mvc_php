@@ -1,0 +1,14 @@
+.nav-logo-img{
+  width: 30px;
+  height: 24px; 
+}
+
+.wrapper{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main{
+  flex-grow: 1;
+}
