@@ -43,7 +43,18 @@
   </main>
   <footer class="border-top footer text-muted">
     <div class="container">
-      <a class="nav-link mt-3 mb-3" href="/home/index">&copy; 2024 - Spu221</a>
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <div class="nav-link">&copy; 2024 - Spu221</div>
+              <a class="nav-link " aria-current="page" href="/">Home</a>
+              <a class="nav-link" href="/home/intro">Intro</a>
+              <a class="nav-link" href="/shop">Shop</a>
+            </div>
+          </div>
+        </div>
+      </nav>
     </div>      
   </footer>
 </div>
